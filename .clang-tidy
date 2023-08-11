@@ -1,0 +1,32 @@
+---
+Checks: "*,
+        -abseil-*,
+        -altera-*,
+        -android-*,
+        -fuchsia-*,
+        -google-*,
+        -llvm*,
+        -modernize-use-trailing-return-type,
+        -zircon-*,
+        -performance-*,
+        -jodernize-*,
+        -readability-else-after-return,
+        -readability-static-accessed-through-instance,
+        -readability-avoid-const-params-in-decls,
+        -cppcoreguidelines-non-private-member-variables-in-classes,
+        -misc-non-private-member-variables-in-classes,
+"
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+FormatStyle:     none
+
+CheckOptions:
+  - key: readability-identifier-length.MinimumParameterNameLength
+    value: '0'
+  - key: readability-identifier-length.IgnoredVariableNames
+    value: 'x|y|z'
+  # ignore macros to avoid catch2 warnings
+  - key: cppcoreguidelines-avoid-do-while.IgnoreMacros
+    value: 'true'
+  - key: misc-use-anonymous-namespace
+    value: 'NULL'
